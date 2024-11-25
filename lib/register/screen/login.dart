@@ -9,10 +9,52 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  Widget MenuPopup() {
+    return PopupMenuButton<String>(
+        itemBuilder: (_) => [
+              PopupMenuItem(
+                child: Card(
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.settings,
+                      color: Colors.blue,
+                      size: 25,
+                    ),
+                    title: Text("ຕັ້ງຄ່າ"),
+                  ),
+                ),
+                onTap: () {},
+              ),
+              PopupMenuItem(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.message,
+                    color: Colors.blue,
+                    size: 25,
+                  ),
+                  title: Text("ຂໍ້ຄວາມ"),
+                ),
+                onTap: () {},
+              ),
+              PopupMenuItem(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.settings,
+                    color: Colors.blue,
+                    size: 25,
+                  ),
+                  title: Text("ບໍລິການ"),
+                ),
+                onTap: () {},
+              ),
+            ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [MenuPopup()],
         title: Text("Login"),
       ),
       drawer: DrawerBar(),

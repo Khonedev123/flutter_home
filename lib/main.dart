@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.blue,
+          iconTheme: IconThemeData(
+            color: Colors.white,
+            size: 30,
+          )
         ),
       ),
       home: HomePage(),
