@@ -13,6 +13,7 @@ Widget UsernameText() {
     padding: const EdgeInsets.symmetric(horizontal: 50),
     child: TextFormField(
       decoration: InputDecoration(
+        iconColor: Colors.blue,
         icon: Icon(Icons.person),
         labelText: 'Username',
       ),
@@ -25,6 +26,7 @@ Widget PasswordText() {
     padding: const EdgeInsets.symmetric(horizontal: 50),
     child: TextFormField(
       decoration: InputDecoration(
+        iconColor: Colors.blue,
         icon: Icon(Icons.lock),
         labelText: 'Password',
       ),
