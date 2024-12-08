@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_home/drawer/screendrawer/MenuManagePage/MenuPage.dart';
 import 'package:flutter_home/drawer/screendrawer/shop.dart';
 
 class DrawerBar extends StatelessWidget {
@@ -48,7 +49,11 @@ class DrawerBar extends StatelessWidget {
               "ຈັດການຖາຂໍ້ມູນ",
               style: TextStyle(fontSize: 20),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pop();
+              MaterialPageRoute route=MaterialPageRoute(builder: (context)=>MenuPage());
+              Navigator.of(context).push(route);
+            },
           ),
           ListTile(
             leading: Icon(

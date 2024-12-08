@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home/HomePage.dart';
 import 'package:flutter_home/drawer/drawerbar.dart';
+import 'package:flutter_home/drawer/screendrawer/MenuManagePage/MenuPage.dart';
 import 'package:flutter_home/register/screen/TabBarView/barview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -140,13 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget routetabBarview() {
     return TabBarView(
       children: [
-        Container(
-          child: Center(
-            child: Text(
-              "Hello",
-            ),
-          ),
-        ),
+        MenuPage(),
         Container(
           child: Center(
             child: Text(
