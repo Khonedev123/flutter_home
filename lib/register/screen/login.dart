@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_home/HomePage.dart';
 import 'package:flutter_home/drawer/drawerbar.dart';
 import 'package:flutter_home/drawer/screendrawer/MenuManagePage/MenuPage.dart';
-import 'package:flutter_home/register/screen/TabBarView/barview.dart';
+import 'package:flutter_home/register/screen/TabBarView/Search.dart';
+import 'package:flutter_home/register/screen/test.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,114 +13,95 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-Widget MenuBar() {
-  return TabBar(
-    tabs: [
-      Tab(),
-    ],
-  );
-}
-
-List items = [
-  "ຕັ້ງຄ່າ",
-  "ເຊື່ອມຕໍ່ກັບຖານຂໍ້ມູນ",
-  "ເຊື່ອມຕໍ່ INTERNET",
-];
-List item = ["ຕັ້ງຄ່າ", "ເຊື່ອມຕໍ່ກັບຖານຂໍ້ມູນ", "ເຊື່ອມຕໍ່ INTERNET"];
-List icon = [
-  Icon(
-    Icons.settings,
-    color: Colors.amber.shade900,
-  ),
-  Icon(
-    Icons.storage,
-    color: Colors.amber.shade900,
-  ),
-  Icon(
-    Icons.wifi,
-    color: Colors.amber.shade900,
-  ),
-];
-Widget PopupMenu() {
-  return PopupMenuButton(
-      itemBuilder: (_) => [
-            PopupMenuItem(
-                child: ListTile(
-              leading: icon[0],
-              title: Text('${item[0]}'),
-              // trailing: Icon(Icons.arrow_forward),
-              onTap: () {},
-            )),
-            PopupMenuItem(
-                child: ListTile(
-              leading: icon[1],
-              title: Text('${item[1]}'),
-              trailing: Icon(Icons.arrow_forward),
-              onTap: () {},
-            )),
-            PopupMenuItem(
-                child: ListTile(
-              leading: icon[2],
-              title: Text('${item[2]}'),
-              trailing: Icon(Icons.arrow_forward),
-              onTap: () {},
-            )),
-          ]);
-}
-
 class _LoginScreenState extends State<LoginScreen> {
-  Widget MenuPopup() {
-    return PopupMenuButton<String>(
-        itemBuilder: (_) => [
-              PopupMenuItem(
-                child: Card(
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.settings,
-                      color: Colors.blue,
-                      size: 25,
-                    ),
-                    title: Text("ຕັ້ງຄ່າ"),
-                  ),
-                ),
-                onTap: () {},
+  // Method to show dialog for name and last name input
+  void _showInputDialog() {
+    final TextEditingController namaController = TextEditingController();
+    final TextEditingController lnameController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("ປ້ອນຂໍໍໍ້ມູນ"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: namaController,
+                decoration: InputDecoration(labelText: "Nama"),
               ),
-              PopupMenuItem(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.message,
-                    color: Colors.blue,
-                    size: 25,
-                  ),
-                  title: Text("ຂໍ້ຄວາມ"),
-                ),
-                onTap: () {},
+              TextField(
+                controller: lnameController,
+                decoration: InputDecoration(labelText: "Last Name"),
               ),
-              PopupMenuItem(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.settings,
-                    color: Colors.blue,
-                    size: 25,
-                  ),
-                  title: Text("ບໍລິການ"),
-                ),
-                onTap: () {
-                  Show();
-                },
-              ),
-            ]);
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                String nama = namaController.text;
+                String lname = lnameController.text;
+                print('Nama: $nama, Last Name: $lname');
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text("ຍັນຢັນ"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text("ຍົກເລີກ"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget PopupMenu() {
+    return PopupMenuButton(
+      itemBuilder: (_) => [
+        PopupMenuItem(
+          child: ListTile(
+            leading: Icon(Icons.settings, color: Colors.amber.shade900),
+            title: Text("ຕັ້ງຄ່າ"),
+            onTap: () {},
+          ),
+        ),
+        PopupMenuItem(
+          child: ListTile(
+            leading: Icon(Icons.message, color: Colors.amber.shade900),
+            title: Text("ຂໍ້ຄວາມ"),
+            onTap: () {
+              // Call input dialog for name and last name
+              _showInputDialog();
+            },
+          ),
+        ),
+        PopupMenuItem(
+          child: ListTile(
+            leading: Icon(Icons.storage, color: Colors.amber.shade900),
+            title: Text("ບໍລິການ"),
+            onTap: () {
+              Show();
+            },
+          ),
+        ),
+      ],
+    );
   }
 
   void Show() {
     showDialog(
-        context: context,
-        builder: (c) {
-          return AlertDialog(
-            title: Text("ສະແດງຄ່າ"),
-            content: HomePage(),
-          );
-        });
+      context: context,
+      builder: (c) {
+        return AlertDialog(
+          title: Text("ສະແດງຄ່າ"),
+          content: HomePage(),
+        );
+      },
+    );
   }
 
   final List<String> tabTitles = [
@@ -142,32 +124,16 @@ class _LoginScreenState extends State<LoginScreen> {
     return TabBarView(
       children: [
         MenuPage(),
+        CounterScreen(),
+        Khone(),
         Container(
           child: Center(
-            child: Text(
-              "Search",
-            ),
+            child: Text("Profile"),
           ),
         ),
         Container(
           child: Center(
-            child: Text(
-              "Info",
-            ),
-          ),
-        ),
-        Container(
-          child: Center(
-            child: Text(
-              "Profile",
-            ),
-          ),
-        ),
-        Container(
-          child: Center(
-            child: Text(
-              "Settings",
-            ),
+            child: Text("Settings"),
           ),
         ),
       ],
@@ -180,31 +146,18 @@ class _LoginScreenState extends State<LoginScreen> {
       length: tabTitles.length,
       child: Scaffold(
         appBar: AppBar(
-          bottom: TabBar(isScrollable: true, tabs: [
-            Tab(
-              icon: tabIcons[0],
-              child: Text(tabTitles[0]),
-            ),
-            Tab(
-              icon: tabIcons[1],
-              child: Text(tabTitles[1]),
-            ),
-            Tab(
-              icon: tabIcons[2],
-              child: Text(tabTitles[2]),
-            ),
-            Tab(
-              icon: tabIcons[3],
-              child: Text(tabTitles[3]),
-            ),
-            Tab(
-              icon: tabIcons[4],
-              child: Text(tabTitles[4]),
-            ),
-          ]),
+          bottom: TabBar(
+            isScrollable: true,
+            tabs: [
+              Tab(icon: tabIcons[0], child: Text(tabTitles[0])),
+              Tab(icon: tabIcons[1], child: Text(tabTitles[1])),
+              Tab(icon: tabIcons[2], child: Text(tabTitles[2])),
+              Tab(icon: tabIcons[3], child: Text(tabTitles[3])),
+              Tab(icon: tabIcons[4], child: Text(tabTitles[4])),
+            ],
+          ),
           actions: [
             PopupMenu(),
-            // MenuPopup(),
           ],
           title: Text(
             "The Cafa KhoneDev",
@@ -219,11 +172,9 @@ class _LoginScreenState extends State<LoginScreen> {
         bottomNavigationBar: NavigationBar(
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home), label: "ໜ້າຫຼັກ"),
-            NavigationDestination(
-                icon: Icon(Icons.arrow_back), label: "ເຂົ້າສູ່ລະບົບ"),
+            NavigationDestination(icon: Icon(Icons.arrow_back), label: "ເຂົ້າສູ່ລະບົບ"),
             NavigationDestination(icon: Icon(Icons.message), label: "ຂໍ້ຄວາມ"),
-            NavigationDestination(
-                icon: Icon(Icons.more_vert), label: "ບໍລິການ"),
+            NavigationDestination(icon: Icon(Icons.more_vert), label: "ບໍລິການ"),
           ],
         ),
         body: routetabBarview(),

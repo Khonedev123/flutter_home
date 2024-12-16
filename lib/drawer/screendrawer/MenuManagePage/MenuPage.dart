@@ -11,10 +11,136 @@ List item = [
   "ພະນັກງານ",
   "ລູກຄ້າ",
   "ອັດຕາແລກປ່ຽນ"
+  "ຂໍ້ມູນຫົວໜ່ວຍ",
+  "ຂໍ້ມູນປະເພດສິນຄ້າ",
+  "ຂໍ້ມູນສິນຄ້າ",
+  "ຂໍ້ມູນຜູ້ສະໝອງ",
+  "ພະນັກງານ",
+  "ລູກຄ້າ",
+  "ອັດຕາແລກປ່ຽນ"
+   "ຂໍ້ມູນຫົວໜ່ວຍ",
+  "ຂໍ້ມູນປະເພດສິນຄ້າ",
+  "ຂໍ້ມູນສິນຄ້າ",
+  "ຂໍ້ມູນຜູ້ສະໝອງ",
+  "ພະນັກງານ",
+  "ລູກຄ້າ",
+  "ອັດຕາແລກປ່ຽນ"
+  "ຂໍ້ມູນຫົວໜ່ວຍ",
+  "ຂໍ້ມູນປະເພດສິນຄ້າ",
+  "ຂໍ້ມູນສິນຄ້າ",
+  "ຂໍ້ມູນຜູ້ສະໝອງ",
+  "ພະນັກງານ",
+  "ລູກຄ້າ",
+  "ອັດຕາແລກປ່ຽນ"
 ];
 List<double> sizeicon = [60, 80, 100];
 List coloricon = [Colors.orange];
 List icon = [
+  Icon(
+    Icons.ac_unit,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.category,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.folder,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.local_shipping,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.person,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.person_add_alt,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.currency_exchange,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.ac_unit,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.category,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.folder,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.local_shipping,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.person,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.person_add_alt,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.currency_exchange,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.ac_unit,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.category,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.folder,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.local_shipping,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.person,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.person_add_alt,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
+  Icon(
+    Icons.currency_exchange,
+    size: sizeicon[0],
+    color: coloricon[0],
+  ),
   Icon(
     Icons.ac_unit,
     size: sizeicon[0],
